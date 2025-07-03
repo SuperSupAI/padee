@@ -1,72 +1,94 @@
+{% extends 'bakery/components/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padee Bakery</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% block site_title %} Home {% endblock %}
+{% block content %}
 
-<!-- Header Section -->
-<header class="site-header">
 
-    <div class="site-header-item">
-        <span>Home </span>
-    </div>
-    <div class="site-header-item">
-        <a href="#products"><span>Line Up</span></a>
-    </div>
-    <div class="site-header-item">
-        <a href="#Opening-hours"><span>Opening hours</span></a>
-    </div>
-</header>
+<main>
+<div class="container">
+  <img src="{% static 'images/B-.jpg' %}" alt="padee" class="bg-image">
+  <div class="text">
+    <h1>PADEE BAKERY</h1>
+    <p>ขนมปังอบสดใหม่ หอมกรุ่นทุกวัน</p>
+  </div>
+</div>
 
-<!-- Hero Section -->
-<section id="hero">
-    <div class="hero-content">
-        <h1>Welcome to Padee Bakery</h1>
-        <p>Fresh, delicious, and handcrafted pastries</p>
-      <!-- <a href="#products" class="btn">Explore Our Products</a>--> 
-    </div>
-</section>
+  
+    <div id="concept">
+      <h2>แนวคิดของร้าน</h2>
+<div class="container">
+        <div class="slogan">อบด้วยใจ ปลอดภัยด้วยธรรมชาติ</div>
 
-<!-- Bakery Items Section -->
-<section id="products">
-    <h2>Our Delicious Bakery Items</h2>
-    <div class="product-grid">
-        {% for item in bakery_items %}
-        <div class="product-card">
-            <img src="{{ item.image.url }}" alt="{{ item.name }}">
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
-            <p class="price">${{ item.price }}</p>
+        <p>
+            <strong>PADEE BAKERY</strong> คือร้านเบเกอรี่โฮมเมดที่ใส่ใจในทุกขั้นตอนการทำ  
+            เราเชื่อว่า <span class="highlight">"ขนมที่ดี เริ่มจากวัตถุดิบที่ดี"</span>  
+            ทุกชิ้นจึงอบสดใหม่โดยไม่ใส่สารเสริม สารกันเสีย หรือวัตถุเจือปนใดๆ
+        </p>
+
+        <p>
+            เราใช้เพียง <span class="highlight">เนยแท้ 100%</span> เพื่อรสชาติที่หอมละมุน พร้อมสุขภาพที่คุณมั่นใจได้  
+            ไม่มีไขมันทรานส์ ไม่มีมาการีน ไม่มีของปลอมแฝง
+        </p>
+
+        <ul>
+            <li>สำหรับคนที่รักสุขภาพแต่ยังอยากกินของอร่อย</li>
+            <li>สำหรับคนที่ใส่ใจสิ่งที่ครอบครัวกิน</li>
+            <li>สำหรับผู้ที่มองหาของขวัญเรียบง่ายแต่เต็มไปด้วยความใส่ใจ</li>
+        </ul>
+
+        <h2>แนวทางของเรา</h2>
+        <p>
+            ขนมทุกชิ้นถูกทำอย่างประณีตในปริมาณพอเหมาะเพื่อคงคุณภาพ  
+            ไม่ผลิตจำนวนมาก ไม่เร่งรีบ เพราะเราเชื่อใน “ความใส่ใจ” มากกว่ากำไร
+        </p>
+
+        <div class="slogan">ไม่มีอะไรแอบแฝง มีแต่เนยแท้และใจที่อบให้</div>
+    </div>
+    </div>
+
+    
+
+<div id="lineup">
+  <h2>เมนูขนมปัง</h2>
+  <div class="gallery">
+
+    <div><img src="{% static 'images/B-29.jpg' %}" alt=""/><p>ธัญพืช</p></div>
+    <div><img src="{% static 'images/B-12.jpg' %}" alt=""/><p>สังขยา</p></div>
+    <div><img src="{% static 'images/B-.jpg' %}" alt=""/><p>อัลมอนด์เนยสด</p></div>
+    <div><img src="{% static 'images/B-.jpg' %}" alt=""/><p>ลูกเกด</p></div>
+    <div><img src="{% static 'images/B-20.jpg' %}" alt=""/><p>หมูหยองน้ำสลัดโบราญ</p></div>
+    <div><img src="{% static 'images/B-5.jpg' %}" alt=""/><p>หมูหยองมายองเนส</p></div>
+    <div><img src="{% static 'images/B-19.jpg' %}" alt=""/><p>หมูหยองน้ำพริกเผา</p></div>
+    <div><img src="{% static 'images/B-.jpg' %}" alt=""/><p>ไส้กรอก</p></div>
+    <div><img src="{% static 'images/B-28.jpg' %}" alt=""/><p>ไส้กรอกมายองเนส</p></div>
+    <div><img src="{% static 'images/B-2.jpg' %}" alt=""/><p>ไส้กรอกพิซซ่า</p></div>
+    <div><img src="{% static 'images/B-3.jpg' %}" alt=""/><p>แฮมพิซซ่า</p></div>
+    <div><img src="{% static 'images/B-4.jpg' %}" alt=""/><p>แฮมมายองเนส</p></div>
+  </div>
+</div>
+
+
+
+    <div id="hours">
+      <h2>เวลาทำการ</h2>
+      <p>เปิดทุกวันจันทร์ - อาทิตย์ เวลา 08:00 - 16:00 น.</p>
+    </div>
+
+    <div class="contact-box" id="access">
+        <h2>ติดต่อเรา</h2>
+        <div class="contact-item">
+            📘 Facebook: 
+            <a href="https://facebook.com/padeebakery" target="_blank">facebook.com/padeebakery</a>
         </div>
-        {% endfor %}
+        <div class="contact-item">
+            💬 Line: <span>padeegroup</span>
+        </div>
+        <div class="contact-item">
+            📸 Instagram:
+            <a href="https://www.instagram.com/padeebakery" target="_blank">instagram.com/padeebakery</a>
+        </div>
     </div>
-</section>
 
-<!-- Bakery Items Section -->
-<section id="Opening-hours">
-    <div class="opening-hours">
-        <h2>Business days and business hours</h2>
-        
-            <p>Monday 11:00 - 18:00</p>
-            <p>Tuesday 11:00 - 18:00</p>
-            <p>Wednesday 11:00 - 18:00</p>
-            <p>Thursday 11:00 - 18:00</p>
-            <p>Friday 11:00 - 18:00</p>
-            <p>Saturday 11:00 - 18:00</p>
-            <p>Sunday 11:00 - 18:00</p>
 
-    </div>
-</section>
-
-<!-- Footer Section -->
-<footer>
-    <p>© 2025 Padee Bakery | All Rights Reserved</p>
-</footer>
-
-</body>
-</html>
+  </main>
+{% endblock %} 

@@ -1,13 +1,10 @@
 {% load static %}
-<header >
 
-    <nav>   
-        <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" style="height: 50px;"></a>   
-        <a href="{% url 'home' %}">Home</a>
-        <a href="#concept">Concept</a>      
-        <a href="#lineup">Menu</a> 
-        <a href="#hours">Service hours</a>
-        <a href="#access"><span>Contact us</a>
-    </nav>
-
+<header class="site-header ">
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" style="height: 50px;"></a>   
+    <a href="{% url 'home' %}">Home</a>
+    <a href="#concept">Concept</a>      
+    <a href="#lineup">Menu</a> 
+    <a href="#hours">Service hours</a>
+    <a href="#access"><span>Contact us</a>
 </header>
